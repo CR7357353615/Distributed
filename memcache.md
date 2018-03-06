@@ -16,5 +16,5 @@
 原理：它将hash函数的值域空间组织成一个圆环，假设有4台服务器，分别为node1，node2，node3，node4，如下图。根据consistent hash算法，按照顺时针方向，分布在node1，node2之间的key值，被定位到node2，分布在node2，node4的key，被定位到node4。
 假设有新节点node5增加进来。假设加在了node2和node4之间，那么受影响的只有之前分布在node2和node4之间的部分key，其他基本不受影响，这样大大减少了key的重新映射。为了避免node在环上分布不均，可以增加虚拟节点，虚拟节点内容指向实际节点。
 
-![](img/consistent Hash.png)
-![](img/consistent Hash1.png)
+![](img/consistentHash.png)
+![](img/consistentHash1.png)
